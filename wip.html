@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width"
+        name="viewport">
+  <meta charset="UTF-8">
+  <title>精品商标转让_好听好看的商标转让_十六年专注商标知识产权服务-尚标</title>
+  <link rel="shortcut icon" href="../favicon.ico?0001"/>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/wip.css">
+</head>
+
+<body>
+
+<div class="header">
+  <a href="javascript:void(0);" class="fhicn" onclick="history.go(-1)"></a>
+  <div class="title">尚标优选精品商标</div>
+  <div class="guild">
+    <a href="javascript:;"></a>
+  </div>
+  <div class="miue"></div>
+  <ul class="tishi">
+    <li><a href="javascript:void(0);" onclick="toswt();return false;">在线服务</a></li>
+    <li><a href="tel:4007110860">400电话</a></li>
+    <li><a href="/memproduct/mybuy">求购商标</a></li>
+    <li><a href="/memproduct/pushsb">出售商标</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <img src="./images/banner.png" alt="">
+</div>
+
+
+<ul class="inner">
+  <li><a href="#" data-pid="123693" onclick="return total(this);"><img
+      src="http://pic.86sb.com/uploads/Brand/2017-06-22/242201706221046105.jpg" alt=""><span>丽嫒时尚</span>
+    <div class="p">形似国母名“丽媛”，寓意享受国母级别的护形似国母名“丽媛”，寓意享受国母级别的护形似国母名“丽媛”，寓意享受国母级别的护</div>
+    <div class="btn"></div>
+  </a></li>
+  <li><a href="#" data-pid="123693" onclick="return total(this);"><img
+      src="http://pic.86sb.com/uploads/Brand/2017-06-22/242201706221046105.jpg" alt=""><span>丽嫒时尚</span>
+    <div class="p">形似国母名“丽媛”，寓意享受国母级别的护形似国母名“丽媛”，寓意享受国母级别的护形似国母名“丽媛”，寓意享受国母级别的护</div>
+    <div class="btn"></div>
+  </a></li>
+  <li><a href="#" data-pid="123693" onclick="return total(this);"><img
+      src="http://pic.86sb.com/uploads/Brand/2017-06-22/242201706221046105.jpg" alt=""><span>丽嫒时尚</span>
+    <div class="p">形似国母名“丽媛”，寓意享受国母级别的护形似国母名“丽媛”，寓意享受国母级别的护形似国母名“丽媛”，寓意享受国母级别的护</div>
+    <div class="btn"></div>
+  </a></li>
+  <li><a href="#" data-pid="123693" onclick="return total(this);"><img
+      src="http://pic.86sb.com/uploads/Brand/2017-06-22/242201706221046105.jpg" alt=""><span>丽嫒时尚</span>
+    <div class="p">形似国母名“丽媛”，寓意享受国母级别的护形似国母名“丽媛”，寓意享受国母级别的护形似国母名“丽媛”，寓意享受国母级别的护</div>
+    <div class="btn"></div>
+  </a></li>
+</ul>
+
+<script>
+  $(function () {
+    /*头部点击弹出通讯*/
+    $('.guild').on('touchend', function () {
+      $('.miue').addClass('block');
+      $('.tishi').addClass('block');
+    });
+    $('.miue').on('touchend', function () {
+      $('.miue').removeClass('block');
+      $('.tishi').removeClass('block');
+    });
+    $('.select .opion').on('touchend', function () {
+      $('ul.nav').toggleClass('active');
+    });
+    
+    $('.nav li').on('touchend', function () {
+      $('.character').eq($(this).index()).addClass('active').siblings().removeClass('active');
+      if ($(this).index() === 1) {
+        $('.nav').addClass('color');
+      } else {
+        $('.nav').removeClass('color');
+      }
+    });
+  });
+  
+  $(window).scroll(function () {
+    var scrollTop = $(this).scrollTop();
+    var scrollHeight = $(document).height();
+    var windowHeight = $(this).height();
+    if (scrollTop + windowHeight == scrollHeight) {
+      if ($("#nomore").length > 0 || no) {
+        return;
+      }
+      $(".upload").remove();
+      $(".inner").append('<div class="upload" style="clear:both;">加载中请稍等</div>');
+      $.get('/products/elitemore', {page: p, bigclassid: b}, function (d) {
+        $(".upload").remove();
+        $("#nomore").remove();
+        $(".inner").append(d);
+        p++
+      }, 'html');
+    }
+  });
+  
+  function total(that) {
+    var _href = $(that).attr('href');
+    var _pid = $(that).attr('data-pid');
+    $.ajax({
+      url: "/common/countzthits",
+      type: "GET",
+      data: {
+        um: 'clicksbtj',
+        t: '2020-07-03 00:00:00',
+        pid: _pid,
+        type: 2,
+        way: "elite_wap",
+        source: location.href,
+        zt: 'jpsb'
+      },
+      beforeSend: function () {
+      },
+      success: function (result) {
+        location.href = _href;
+      }
+    });
+    return false;
+  }
+</script>
+</body>
+</html>
